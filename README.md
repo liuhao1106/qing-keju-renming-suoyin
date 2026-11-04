@@ -26,6 +26,7 @@
 
 | 项目 | 数值 |
 | --- | --- |
+| 底本 | 来新夏 主编《清代科举人物家传资料汇编》，学苑出版社 2006 年 12 月第 1 版（全 101 册：正文 100 册＋索引 1 册） |
 | 人名条目 | **8088 条** |
 | 不同姓氏 | **467 个**（含复姓 6 个：歐陽 17、諸葛 5、申屠 2、皇甫 1、上官 1、司徒 1） |
 | 覆盖册次 | 第 1–100 册 |
@@ -141,18 +142,41 @@ python build_output.py --records work/all/records.jsonl --outdir output
 - **书前笔画/拼音检字表** OCR 不完整，**未**用于自动改姓（实测会误改），仅作交叉提示。
 - 索引给的是**资料所在册页**，不含人物生卒、籍贯等信息——本仓库只做索引搬运，不做人物考订。
 
-## 九、数据来源与版权
+## 九、版本与数据来源
 
-- **原书**：《清代科舉人物家傳資料滙編》所附人名索引；索引按四角号码编排，本工程只重排**索引**，不复制正文。
-- **成果性质**：条目姓名、册页、四角码、字注均转录自原书索引，属事实性数据；**重排、校勘、检索界面与代码**为本项目整理者成果。
-- 原书著作权归编者与出版方。本仓库仅供学术研究使用，不作商业用途；如需引用，请以原书为准并核对原页（每条都给出 `p##L/R` 定位）。
-- 原书扫描件不在本仓库。
+### 底本（据原书版权页与 CIP 数据）
+
+| 项 | 内容 |
+| --- | --- |
+| 书名 | 清代科举人物家传资料汇编（书衣题签作「清代科舉人物家傳資料滙編」） |
+| 主编 | 来新夏 |
+| 出版发行 | 学苑出版社（北京） |
+| 版次 | 2006 年 12 月北京第 1 版，2006 年 12 月北京第 1 次印刷 |
+| 丛书 | 国家清史编纂委员会·文献丛刊 |
+| 册数 | **全 101 册**（正文 100 册 ＋ 索引 1 册） |
+| ISBN | 7-5077-2623-1 |
+| 索引编制 | 王永华（责任编辑：徐建军） |
+| CIP 核字 | 中国版本图书馆 CIP 数据核字（2005）第 127555 号 |
+
+本工程覆盖**正文第 1–100 册、第 1–627 页**，以及**索引卷**（1 册，138 页，对应 PDF 第 19–156 页）。
+
+原书版权页：
+
+![底本版权页与 CIP 数据](docs/cip.png)
+
+### 版权与使用限制
+
+- 本工程只重排**索引**（人名、册页、四角码、字注），不复制正文，也不附带原书扫描件。
+- 条目姓名、册页、四角码、字注转录自原书索引，属事实性数据；**重排、校勘、检索界面与代码**为本项目整理者成果。
+- 原书著作权归编者与出版方（学苑出版社）。本仓库仅供学术研究使用，不作商业用途；引用请以原书为准，并按每条给出的 `p##L/R` 回原页核对。
 
 ## 十、引用
 
 ```
-《清代科舉人物家傳資料滙編·人名索引》按姓氏重編，
-8088 条 / 467 姓，https://github.com/liuhao1106/qing-keju-renming-suoyin
+来新夏 主编：《清代科举人物家传资料汇编》（全 101 册），北京：学苑出版社，2006 年 12 月。
+
+《清代科舉人物家傳資料滙編·人名索引》按姓氏重編，8088 条 / 467 姓，
+https://github.com/liuhao1106/qing-keju-renming-suoyin
 ```
 
 ---
@@ -166,3 +190,5 @@ A surname-indexed edition of the name index to *Qing Dynasty Examination Candida
 - per-entry traceability back to the original index page and column (`p20L`).
 
 Every one of the 138 pages was independently blind-transcribed and diffed against the parsed records; 15 sample columns were checked line by line. Data: CSV/XLSX with surname, full name, volume, page, four-corner code, courtesy name, source page, column. Only the index is reproduced — no body text, no scanned pages.
+
+**Source edition**: 来新夏 (ed.), *清代科举人物家传资料汇编* [Compendium of Family Biographies of Qing Examination Candidates], 101 vols. (100 text + 1 index), Beijing: Xueyuan Press (学苑出版社), 1st ed., December 2006. ISBN 7-5077-2623-1. Series: State Qing History Compilation Committee · Document Series (国家清史编纂委员会·文献丛刊). Index compiled by 王永华. This project covers text vols. 1–100, pp. 1–627, plus the 138-page index volume.
